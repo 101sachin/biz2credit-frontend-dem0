@@ -1,17 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { CustomersDataService } from "./services/customers-data.service";
+import { CustomersDataService } from "src/app/services/customers-data.service";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  selector: "biz-customer",
+  templateUrl: "./customer.component.html",
+  styleUrls: ["./customer.component.css"]
 })
-export class AppComponent {
-  title = "biz2credit-ng";
+export class CustomerComponent implements OnInit {
   customers: any;
-
   constructor(private service: CustomersDataService) {}
-
   ngOnInit() {
     this.service.getCustomers().subscribe(values => {
       console.log(values);
